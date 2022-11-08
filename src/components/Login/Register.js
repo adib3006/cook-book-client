@@ -4,7 +4,7 @@ import img from '../../assets/login.jpg';
 import { AuthContext } from './../../contexts/AuthProvider';
 
 const Register = () => {
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -25,6 +25,16 @@ const Register = () => {
                         navigate(from, { replace: true });
                     })
                     .catch(error => console.error(error))
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error))
     }
@@ -57,7 +67,7 @@ const Register = () => {
                             <input className="btn btn-accent" type="submit" value="Register" />
                         </div>
                     </form>
-                    <button className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
+                    <button onClick={handleGoogleSignIn} className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-semibold' to='/login'>Login</Link></p>
                 </div>
                 <div className="text-center lg:text-left">

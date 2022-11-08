@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const hangleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=>console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
     return (
         <div className="navbar bg-base-100">
@@ -29,18 +30,21 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Cook <span className='text-orange-500'>Book</span></Link>
+                <div className='flex items-center ml-5'>
+                    <Link to='/'><img src={logo} alt="" /></Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">Cook <span className='text-orange-500'>Book</span></Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/home'>Home</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
                     {
-                        user ? 
+                        user ?
                             <>
                                 <li><Link to='/myreviews'>My Reviews</Link></li>
                                 <li><Link to='/addservices'>Add Services</Link></li>
-                            </> 
+                            </>
                             : <></>
                     }
                 </ul>

@@ -5,7 +5,7 @@ import { AuthContext } from './../../contexts/AuthProvider';
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -16,6 +16,16 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -52,7 +62,7 @@ const Login = () => {
                             <input className="btn btn-accent" type="submit" value="Login" />
                         </div>
                     </form>
-                    <button className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
+                    <button onClick={handleGoogleSignIn} className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
                     <p className='text-center'>New to Cook Book? <Link className='text-orange-600 font-semibold' to='/register'>Register</Link></p>
                 </div>
             </div>
