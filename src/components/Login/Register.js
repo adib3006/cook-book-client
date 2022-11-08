@@ -1,11 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.jpg';
+import { AuthContext } from './../../contexts/AuthProvider';
 
 const Register = () => {
+    const { createUser, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
-    const handleRegister = () => {
-
+    const handleRegister = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                updateUser(name)
+                    .then(result => {
+                        console.log(result);
+                        navigate(from, { replace: true });
+                    })
+                    .catch(error => console.error(error))
+            })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -30,7 +51,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-accent" type="submit" value="Register" />
