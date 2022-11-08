@@ -7,16 +7,14 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
     if (loading) {
         return <div class="flex justify-center items-center">
-            <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
+                    <div className="radial-progress animate-spin" style={{ "--value": 80 }}></div>
+                </div>
     }
     if (user && user?.uid) {
         return children;
     }
-    
-    return <Navigate to='/login' state={{from:location}} replace></Navigate>
+
+    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
 };
 
 export default PrivateRoute;
