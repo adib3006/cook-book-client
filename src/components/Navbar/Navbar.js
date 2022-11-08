@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -12,6 +14,14 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/home'>Home</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
+                        {
+                            user ?
+                                <>
+                                    <li><Link to='/home'>My Reviews</Link></li>
+                                    <li><Link to='/blog'>Add Services</Link></li>
+                                </>
+                                : <></>
+                        }
                     </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Cook <span className='text-orange-500'>Book</span></Link>
@@ -20,10 +30,22 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/home'>Home</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
+                    {
+                        user ? 
+                            <>
+                                <li><Link to='/home'>My Reviews</Link></li>
+                                <li><Link to='/blog'>Add Services</Link></li>
+                            </> 
+                            : <></>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn btn-outline">Login</Link>
+
+                {
+                    user ? <button className='btn btn-secondary'>Log Out</button> :
+                        <Link to='/login' className="btn btn-outline">Login</Link>
+                }
             </div>
         </div>
     );

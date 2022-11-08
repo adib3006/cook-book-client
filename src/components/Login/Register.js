@@ -36,6 +36,7 @@ const Register = () => {
                             <input className="btn btn-accent" type="submit" value="Register" />
                         </div>
                     </form>
+                    <button className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-semibold' to='/login'>Login</Link></p>
                 </div>
                 <div className="text-center lg:text-left">

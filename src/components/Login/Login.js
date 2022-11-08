@@ -36,6 +36,7 @@ const Login = () => {
                             <input className="btn btn-accent" type="submit" value="Login" />
                         </div>
                     </form>
+                    <button className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
                     <p className='text-center'>New to Cook Book? <Link className='text-orange-600 font-semibold' to='/register'>Register</Link></p>
                 </div>
             </div>
