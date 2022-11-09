@@ -11,7 +11,7 @@ const Details = () => {
             <div>
                 <div className='m-10'>
                     <div className='flex justify-center mb-4'>
-                        <PhotoView key={item.item_id} src={img}><img className='rounded-xl' src={img} alt="" />
+                        <PhotoView key={item._id} src={img}><img className='rounded-xl w-1/2 mx-auto' src={img} alt="" />
                         </PhotoView>
                     </div>
                     <h1 className='text-5xl text-center font-bold mb-6'>{title}</h1>

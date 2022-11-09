@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     if (loading) {
-        return <div class="flex justify-center items-center">
+        return <div className="flex justify-center items-center">
                     <div className="radial-progress animate-spin" style={{ "--value": 80 }}></div>
                 </div>
     }

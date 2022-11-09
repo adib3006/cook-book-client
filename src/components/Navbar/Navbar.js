@@ -52,7 +52,7 @@ const Navbar = () => {
             <div className="navbar-end">
 
                 {
-                    user ? <button onClick={hangleLogOut} className='btn btn-secondary'>Log Out</button> :
+                    user ? <button onClick={hangleLogOut} className='btn btn-outline btn-error'>Log Out</button> :
                         <Link to='/login' className="btn btn-outline">Login</Link>
                 }
             </div>

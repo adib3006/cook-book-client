@@ -10,7 +10,7 @@ const Menu = () => {
             .then(data => setMenu(data))
     }, [])
     return (
-        <div>
+        <div id='menu'>
             <div className='text-center mb-6'>
                 <p className="text-2xl font-bold text-orange-600">Menu</p>
                 <h2 className="text-5xl font-semibold mb-5">Our Foods</h2>
@@ -18,7 +18,7 @@ const Menu = () => {
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-5'>
                 {
-                    menu.map(menuItem => <MenuItem key={menuItem.item_id} menuItem={menuItem}></MenuItem>)
+                    menu.map(menuItem => <MenuItem key={menuItem._id} menuItem={menuItem}></MenuItem>)
                 }
             </div>
             <div className='flex items-center justify-center mt-5'>

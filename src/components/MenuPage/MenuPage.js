@@ -11,7 +11,7 @@ const MenuPage = () => {
     return (
         <div className='m-5 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-5'>
             {
-                menu.map(menuItem => <MenuPageItems key={menuItem.item_id} menuItem={menuItem}></MenuPageItems>)
+                menu.map(menuItem => <MenuPageItems key={menuItem._id} menuItem={menuItem}></MenuPageItems>)
             }
         </div>
     );
