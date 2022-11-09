@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from './../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 
-const AddReview = ({item}) => {
+const AddReview = ({item,refresh,setRefresh}) => {
     const {user} = useContext(AuthContext);
     const {_id, title, img} = item;
     const handleAddReview = (event) => {
@@ -20,7 +20,6 @@ const AddReview = ({item}) => {
             title,
             img
         }
-        console.log(review);
         fetch(`http://localhost:5000/menu/${_id}`,{
             method:'POST',
             headers: {
@@ -33,6 +32,7 @@ const AddReview = ({item}) => {
             if(data.acknowledged){
                 form.reset();
                 toast.success('Review added successfully');
+                setRefresh(!refresh);
             }
         })
         .catch(err => console.error(err))

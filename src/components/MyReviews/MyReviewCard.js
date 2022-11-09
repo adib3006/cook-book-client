@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaRegStar } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const MyReviewCard = ({ review,setReviews,reviews }) => {
+    const navigate = useNavigate();
     const { img, title, reviewText, ratings,_id } = review;
     const handleDelete = (id) => {
         const procced = window.confirm('Sure you want to delete this item?');
@@ -20,6 +22,10 @@ const MyReviewCard = ({ review,setReviews,reviews }) => {
                 });
         }
     }
+
+const handleEdit = (id) => {
+    navigate(`/myreviews/update/${id}`)
+  }
     return (
         <div className="card w-full border rounded-xl shadow-xl mb-5">
             <div className="card-body">
@@ -34,7 +40,7 @@ const MyReviewCard = ({ review,setReviews,reviews }) => {
                     <p className='flex items-center w-1/5'>Ratings : {ratings}<span className='text-orange-500'>
                         <FaRegStar /></span></p>
                     <div>
-                        <button className='btn mr-2 btn-primary'>Update</button>
+                        <button onClick={()=>handleEdit(_id)} className='btn mr-2 btn-primary'>Update</button>
                         <button onClick={()=>handleDelete(_id)} className='btn'>Delete</button>
                     </div>
                 </div>

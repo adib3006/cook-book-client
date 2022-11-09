@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegStar } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -8,6 +8,7 @@ import { AuthContext } from './../../contexts/AuthProvider';
 
 const Details = () => {
     const {user} = useContext(AuthContext);
+    const [refresh,setRefresh] = useState(true);
     const {item} = useLoaderData();
     const { _id, title, img, ratings, price, description } = item;
     return (
@@ -26,9 +27,9 @@ const Details = () => {
             </div>
             <h1 className='text-5xl text-center font-bold my-5'>Reviews</h1>
             <div>
-                <Reviews item={item}></Reviews>
+                <Reviews item={item} refresh={refresh}></Reviews>
                 {
-                    user ? <AddReview item={item}></AddReview> : <p className='text-xl text-center my-5'>Please <Link to='/login' className='underline-offset-2 text-orange-500 font-semibold'>Login</Link> to add review</p>
+                    user ? <AddReview item={item} refresh={refresh} setRefresh={setRefresh}></AddReview> : <p className='text-xl text-center my-5'>Please <Link to='/login' className='underline-offset-2 text-orange-500 font-semibold'>Login</Link> to add review</p>
                 }
             </div>
         </PhotoProvider>
