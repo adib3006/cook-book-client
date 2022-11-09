@@ -32,7 +32,7 @@ const AddReview = ({item}) => {
         .then(data=>{
             if(data.acknowledged){
                 form.reset();
-                toast.success('order placed successfully');
+                toast.success('Review added successfully');
             }
         })
         .catch(err => console.error(err))
