@@ -29,7 +29,7 @@ const AddServices = () => {
         .then(data=>{
             if(data.acknowledged){
                 form.reset();
-                toast.success('order placed successfully');
+                toast.success('Item Added successfully');
             }
         })
         .catch(err => console.error(err))

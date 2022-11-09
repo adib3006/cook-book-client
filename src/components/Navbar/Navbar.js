@@ -10,6 +10,7 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+    console.log(user);
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">

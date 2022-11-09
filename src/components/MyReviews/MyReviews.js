@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from './../../contexts/AuthProvider';
 
 const MyReviews = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div>
-            <h1 className='text-center text-5xl font-bold'>My Reviews page</h1>
+            <h1 className='text-center text-5xl font-bold'>Hello, {user.displayName}.</h1>
         </div>
     );
 };

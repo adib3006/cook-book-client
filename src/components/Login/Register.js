@@ -13,13 +13,14 @@ const Register = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const imageURL = form.imageURL.value;
         const email = form.email.value;
         const password = form.password.value;
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                updateUser(name)
+                updateUser(name,imageURL)
                     .then(result => {
                         console.log(result);
                         navigate(from, { replace: true });
@@ -53,9 +54,15 @@ const Register = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
+                                <span className="label-text">Photo</span>
+                            </label>
+                            <input type="text" name='imageURL' placeholder="imageURL" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
