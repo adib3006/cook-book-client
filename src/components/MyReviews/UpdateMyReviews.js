@@ -9,7 +9,11 @@ const UpdateMyReviews = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/${id}`)
+        fetch(`http://localhost:5000/myreviews/${id}`,{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('cookBook-token')}`
+            }
+        })
             .then((res) => res.json())
             .then((data) => setReview(data))
             .catch((err) => toast.error(err));
@@ -28,7 +32,8 @@ const UpdateMyReviews = () => {
         fetch(`http://localhost:5000/myreviews/${id}`, {
             method: "PATCH",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem('cookBook-token')}`
             },
             body: JSON.stringify(updatedReview)
         })

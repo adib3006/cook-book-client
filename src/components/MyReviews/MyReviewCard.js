@@ -10,7 +10,10 @@ const MyReviewCard = ({ review,setReviews,reviews }) => {
         const procced = window.confirm('Sure you want to delete this item?');
         if (procced) {
             fetch(`http://localhost:5000/myreviews/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers:{
+                    authorization: `Bearer ${localStorage.getItem('cookBook-token')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
