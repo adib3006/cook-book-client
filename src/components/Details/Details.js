@@ -5,6 +5,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Reviews from '../Reviews/Reviews';
 import AddReview from '../Reviews/AddReview';
 import { AuthContext } from './../../contexts/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Details = () => {
     const {user} = useContext(AuthContext);
@@ -13,6 +14,9 @@ const Details = () => {
     const { _id, title, img, ratings, price, description } = item;
     return (
         <PhotoProvider>
+            <Helmet>
+                <title>Cook Book | Details</title>
+            </Helmet>
             <div>
                 <div className='m-10'>
                     <div className='flex justify-center mb-4'>

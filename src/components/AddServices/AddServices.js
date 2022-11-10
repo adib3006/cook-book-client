@@ -1,5 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const AddServices = () => {
     const handleAddItem = (event) => {
@@ -37,6 +38,9 @@ const AddServices = () => {
 
     return (
         <div className='m-10 p-2'>
+            <Helmet>
+                <title>Cook Book | Add Services</title>
+            </Helmet>
             <form onSubmit={handleAddItem}>
                 <h2 className="text-4xl text-center mb-5">Add your preferred menu item</h2>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5'>

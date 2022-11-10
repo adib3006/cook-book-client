@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.jpg';
 import { AuthContext } from './../../contexts/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
@@ -71,6 +72,9 @@ const Register = () => {
 
     return (
         <div className="hero w-full my-20">
+            <Helmet>
+                <title>Cook Book | Register</title>
+            </Helmet>
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20 lg:ml-16">
                     <h1 className="text-5xl font-bold text-center">Register</h1>

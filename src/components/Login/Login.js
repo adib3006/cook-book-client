@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.jpg';
 import { AuthContext } from './../../contexts/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
 
@@ -69,6 +70,9 @@ const Login = () => {
 
     return (
         <div className="hero w-full my-20">
+            <Helmet>
+                <title>Cook Book | Login</title>
+            </Helmet>
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
                     <img className='w-3/4' src={img} alt="" />

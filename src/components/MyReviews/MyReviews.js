@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './../../contexts/AuthProvider';
 import MyReviewCard from './MyReviewCard';
+import { Helmet } from 'react-helmet';
 
 const MyReviews = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -26,6 +27,9 @@ const MyReviews = () => {
 
     return (
         <div className='m-10'>
+            <Helmet>
+                <title>Cook Book | My Reviews</title>
+            </Helmet>
             <h1 className='text-center text-5xl font-bold m-5'>Hello, {user.displayName}.</h1>
             {
                  len ? reviews?.map(review => <MyReviewCard key={review._id} review={review} setReviews={setReviews} reviews={reviews}></MyReviewCard>) : <h2 className='text-2xl text-center my-40'>No reviews were added</h2>
