@@ -9,6 +9,7 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import MyReviews from '../../components/MyReviews/MyReviews';
 import AddServices from '../../components/AddServices/AddServices';
 import UpdateMyReviews from '../../components/MyReviews/UpdateMyReviews';
+import ErrorPage from '../../components/ErrorPage/ErrorPage';
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',

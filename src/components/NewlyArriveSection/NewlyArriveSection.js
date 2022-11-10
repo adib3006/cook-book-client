@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import slide1 from '../../assets/slide1.jpg';
 
 const NewlyArriveSection = () => {
@@ -15,7 +16,7 @@ const NewlyArriveSection = () => {
                         <p><small>- tacos, pizza, macoroni</small></p>
                         <p><small>- fried rice, sushi, steak</small></p>
                         <p><small>- sub sandwich, burger, fries</small></p>
-                        <button className="btn btn-outline btn-error mt-4">Order Now</button>
+                        <button className="btn btn-outline btn-error mt-4"><Link to='/menu'>Order Now</Link></button>
                     </div>
                 </div>
             </div>

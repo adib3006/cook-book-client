@@ -7,9 +7,9 @@ const ReviewCard = ({ review }) => {
     const time = releaseDate.split('T')[1];
     const postTime = date+' at '+time.slice(0,8);
     return (
-        <div className="card w-2/3 mx-auto border rounded-xl shadow-xl mb-5">
+        <div className="card w-full lg:w-2/3 mx-auto border rounded-xl shadow-xl mb-5">
             <div className="card-body">
-                <div className='w-full flex justify-between'>
+                <div className='w-full lg:flex justify-between'>
                     <div className='flex items-center justify-start'>
                         <div className="avatar mr-5">
                             <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

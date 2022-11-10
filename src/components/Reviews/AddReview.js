@@ -38,7 +38,7 @@ const AddReview = ({item,refresh,setRefresh}) => {
         .catch(err => console.error(err))
     }
     return (
-        <div className='m-10 p-2'>
+        <div className='mx-auto w-4/5 lg:w-2/3 my-10 p-2'>
             <form onSubmit={handleAddReview}>
                 <h2 className="text-4xl text-center mb-5">Add your review</h2>
                 <textarea name='review' className="textarea textarea-bordered textarea-warning h-24 w-full mb-5" placeholder="Review" required></textarea>

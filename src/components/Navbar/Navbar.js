@@ -11,7 +11,7 @@ const Navbar = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 py-3">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center ml-5'>
-                    <Link to='/'><img src={logo} alt="" /></Link>
+                    <Link to='/'><img className='image-full' src={logo} alt="" /></Link>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Cook <span className='text-orange-500'>Book</span></Link>
                 </div>
             </div>

@@ -11,18 +11,18 @@ const AwardSection = () => {
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={cover1} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div>
-                        <h1 className="text-5xl font-bold">Best Cloud Kitchen Award 2022</h1>
-                        <p className="py-6">"They provide best quality foods at a very affordable price. Delivery is always on time."</p>
-                        <p><small>- The Food Critic Society.</small></p>
+                        <h1 className="text-5xl font-bold">Best Cloud Kitchen <span className='text-orange-500'>Award</span> 2022</h1>
+                        <p className="py-6 text-lg">"They provide best quality foods at a very affordable price. Delivery is always on time."</p>
+                        <p className='italic font-semibold'><small>- The Food Critic Society.</small></p>
                     </div>
                 </div>
             </div>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
                     <div>
-                        <h1 className="text-5xl font-bold">The Foodies Award 2022</h1>
-                        <p className="py-6">"They never compromise on their quality and they mantain a great price to quantity ratio."</p>
-                        <p><small>- The Foodies.</small></p>
+                        <h1 className="text-5xl font-bold">The Foodies <span className='text-orange-500'>Award</span> 2022</h1>
+                        <p className="py-6 text-lg">"They never compromise on their quality and they mantain a great price to quantity ratio."</p>
+                        <p className='italic font-semibold'><small>- The Foodies.</small></p>
                     </div>
                     <img src={cover2} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 </div>

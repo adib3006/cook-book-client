@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo1.png';
 
 const Footer = () => {
     return (
         <footer className="footer footer-center p-10 bg-zinc-900 text-gray-200">
             <div>
+                <img className='w-24' src={logo} alt="" />
                 <p className="font-bold">
                     Cook Book Ltd. <br />Providing tasty meals since 2022
                 </p>
