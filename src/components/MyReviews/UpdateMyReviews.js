@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const UpdateMyReviews = () => {
     const router = useParams();
@@ -47,6 +48,9 @@ const UpdateMyReviews = () => {
 
     return (
         <div className='m-10 p-2'>
+            <Helmet>
+                <title>Cook Book | Update</title>
+            </Helmet>
             <form onSubmit={handleUpdateReview}>
                 <h2 className="text-4xl text-center mb-5">Update your review</h2>
                 <textarea name='review' defaultValue={review.reviewText} className="textarea textarea-bordered textarea-warning h-24 w-full mb-5" placeholder="Review" required></textarea>
