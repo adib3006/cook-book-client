@@ -8,7 +8,7 @@ const MyReviews = () => {
     const [reviews,setReviews] = useState([]);
     
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+        fetch(`https://cook-book-server.vercel.app/myreviews?email=${user?.email}`, {
             headers:{
                 authorization: `Bearer ${localStorage.getItem('cookBook-token')}`
             }

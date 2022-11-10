@@ -5,7 +5,7 @@ import MenuItem from './MenuItem';
 const Menu = () => {
     const [menu, setMenu] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/home')
+        fetch('https://cook-book-server.vercel.app/home')
             .then(res => res.json())
             .then(data => setMenu(data))
     }, [])

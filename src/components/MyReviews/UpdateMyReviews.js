@@ -9,7 +9,7 @@ const UpdateMyReviews = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/${id}`,{
+        fetch(`https://cook-book-server.vercel.app/myreviews/${id}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('cookBook-token')}`
             }
@@ -29,7 +29,7 @@ const UpdateMyReviews = () => {
             ratings
         }
 
-        fetch(`http://localhost:5000/myreviews/${id}`, {
+        fetch(`https://cook-book-server.vercel.app/myreviews/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

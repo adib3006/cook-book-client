@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             {
                 path:'/menu/:id',
                 element:<Details></Details>,
-                loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
+                loader:({params})=>fetch(`https://cook-book-server.vercel.app/menu/${params.id}`)
             },
             {
                 path:'/myreviews',

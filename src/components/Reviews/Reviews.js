@@ -4,7 +4,7 @@ import ReviewCard from './ReviewCard';
 const Reviews = ({item,refresh}) => {
     const [reviews,setReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/menu/${item._id}`)
+        fetch(`https://cook-book-server.vercel.app/menu/${item._id}`)
             .then(res => res.json())
             .then(data => setReviews(data.reviews))
 

@@ -20,7 +20,7 @@ const AddReview = ({item,refresh,setRefresh}) => {
             title,
             img
         }
-        fetch(`http://localhost:5000/menu/${_id}`,{
+        fetch(`https://cook-book-server.vercel.app/menu/${_id}`,{
             method:'POST',
             headers: {
                 'content-type' : 'application/json'

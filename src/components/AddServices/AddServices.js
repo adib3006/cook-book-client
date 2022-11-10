@@ -19,7 +19,7 @@ const AddServices = () => {
             description
         }
 
-        fetch('http://localhost:5000/menu',{
+        fetch('https://cook-book-server.vercel.app/menu',{
             method:'POST',
             headers: {
                 'content-type' : 'application/json'

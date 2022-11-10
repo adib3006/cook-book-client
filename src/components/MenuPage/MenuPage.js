@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 const MenuPage = () => {
     const [menu, setMenu] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/menu')
+        fetch('https://cook-book-server.vercel.app/menu')
             .then(res => res.json())
             .then(data => setMenu(data))
     }, [])

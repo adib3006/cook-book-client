@@ -9,7 +9,7 @@ const MyReviewCard = ({ review,setReviews,reviews }) => {
     const handleDelete = (id) => {
         const procced = window.confirm('Sure you want to delete this item?');
         if (procced) {
-            fetch(`http://localhost:5000/myreviews/${id}`, {
+            fetch(`https://cook-book-server.vercel.app/myreviews/${id}`, {
                 method: 'DELETE',
                 headers:{
                     authorization: `Bearer ${localStorage.getItem('cookBook-token')}`
