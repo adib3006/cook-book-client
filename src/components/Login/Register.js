@@ -52,7 +52,7 @@ const Register = () => {
                     email: user.email
                 }
 
-                console.log(currentUser);
+                console.log(user);
 
                 fetch('https://cook-book-server.vercel.app/jwt', {
                     method: 'POST',
@@ -71,7 +71,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero w-full my-20">
+        <div className="hero w-full my-5 md:my-20">
             <Helmet>
                 <title>Cook Book | Register</title>
             </Helmet>
@@ -110,7 +110,7 @@ const Register = () => {
                     <button onClick={handleGoogleSignIn} className='btn btn-outline mx-auto mb-5'>Sign in With Google</button>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-semibold' to='/login'>Login</Link></p>
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="hidden md:block">
                     <img className='w-3/4' src={img} alt="" />
                 </div>
             </div>

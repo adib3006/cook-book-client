@@ -14,8 +14,8 @@ const MenuItem = ({ menuItem }) => {
     }
     return (
         <PhotoProvider>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                <PhotoView key={_id} src={img}><figure><img src={img} alt="Shoes" /></figure></PhotoView>
+            <div className="card card-compact w-80 md:w-96 bg-base-100 shadow-xl">
+                <PhotoView key={_id} src={img}><figure><img className='h-[300px] w-[400px]' src={img} alt="Shoes" /></figure></PhotoView>
                 <div className="card-body">
                     <div className='flex items-center justify-between'>
                         <h2 className="card-title">{title}</h2>

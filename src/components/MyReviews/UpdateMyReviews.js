@@ -47,14 +47,14 @@ const UpdateMyReviews = () => {
     }
 
     return (
-        <div className='m-10 p-2'>
+        <div className='m-2 md:m-10 p-2'>
             <Helmet>
                 <title>Cook Book | Update</title>
             </Helmet>
             <form onSubmit={handleUpdateReview}>
                 <h2 className="text-4xl text-center mb-5">Update your review</h2>
                 <textarea name='review' defaultValue={review.reviewText} className="textarea textarea-bordered textarea-warning h-24 w-full mb-5" placeholder="Review" required></textarea>
-                <input name='ratings' defaultValue={review.ratings} type="text" placeholder="Item Ratings" className="input input-bordered input-warning w-1/2" required />
+                <input name='ratings' type="number" min="0" max="5" step="0.5" placeholder="Item Ratings" className="input input-bordered input-warning w-1/2" required/>
                 <div className='flex justify-center'>
                     <input className='btn btn-outline btn-warning my-5' type="submit" value="Update" />
                 </div>

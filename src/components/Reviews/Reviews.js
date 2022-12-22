@@ -10,7 +10,7 @@ const Reviews = ({item,refresh}) => {
 
     }, [item._id,refresh]);
     return (
-        <div className='m-10'>
+        <div className='m-2 md:m-10'>
             {
                 reviews?.map(review=><ReviewCard key={review._id} review={review}></ReviewCard>)
             }

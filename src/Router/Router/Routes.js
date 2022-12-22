@@ -10,6 +10,7 @@ import MyReviews from '../../components/MyReviews/MyReviews';
 import AddServices from '../../components/AddServices/AddServices';
 import UpdateMyReviews from '../../components/MyReviews/UpdateMyReviews';
 import ErrorPage from '../../components/ErrorPage/ErrorPage';
+import Team from '../../components/Team/Team';
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
             {
                 path:'/blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'/team',
+                element:<Team></Team>
             },
             {
                 path:'/menu',

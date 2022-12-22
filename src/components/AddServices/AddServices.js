@@ -46,7 +46,7 @@ const AddServices = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5'>
                     <input name='title' type="text" placeholder="Item Name" className="input input-bordered input-warning w-full" required/>
                     <input name='img' type="text" placeholder="Image URL" className="input input-bordered input-warning w-full" required/>
-                    <input name='ratings' type="text" placeholder="Item Ratings" className="input input-bordered input-warning w-full" required/>
+                    <input name='ratings' type="number" min="0" max="5" step="0.5" placeholder="Item Ratings" className="input input-bordered input-warning w-full" required/>
                     <input name='price' type="text" placeholder="Price" className="input input-bordered input-warning w-full" required/>
                 </div>
                 <textarea name='description' className="textarea textarea-bordered textarea-warning h-24 w-full mb-5" placeholder="Description" required></textarea>

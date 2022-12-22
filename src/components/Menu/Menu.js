@@ -14,7 +14,7 @@ const Menu = () => {
             <div className='text-center mb-6'>
                 <p className="text-2xl font-bold text-orange-600">Menu</p>
                 <h2 className="text-5xl font-semibold mb-5">Our Foods</h2>
-                <p className='mx-28'>Select from our featured items and enjoy tasty foods delivered at your doorstep.</p>
+                <p className='md:mx-28'>Select from our featured items and enjoy tasty foods delivered at your doorstep.</p>
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-5'>
                 {

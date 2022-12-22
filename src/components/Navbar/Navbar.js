@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-import logo from '../../assets/logo.png';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -11,7 +10,7 @@ const Navbar = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className="navbar bg-base-100 py-3">
+        <div className="navbar bg-white/75 px-2 md:px-20 backdrop-blur-lg sticky top-0 z-50 py-3">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -20,6 +19,7 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/home'>Home</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/team'>Team</Link></li>
                         {
                             user ?
                                 <>
@@ -31,7 +31,6 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center ml-5'>
-                    <Link to='/'><img className='image-full' src={logo} alt="" /></Link>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Cook <span className='text-orange-500'>Book</span></Link>
                 </div>
             </div>
@@ -39,6 +38,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/home'>Home</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
+                    <li><Link to='/team'>Team</Link></li>
                     {
                         user ?
                             <>

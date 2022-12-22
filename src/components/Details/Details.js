@@ -18,9 +18,9 @@ const Details = () => {
                 <title>Cook Book | Details</title>
             </Helmet>
             <div>
-                <div className='m-10'>
+                <div className='m-5 md:m-10'>
                     <div className='flex justify-center mb-4'>
-                        <PhotoView key={_id} src={img}><img className='rounded-xl w-1/2 mx-auto' src={img} alt="" />
+                        <PhotoView key={_id} src={img}><img className='rounded-xl md:w-1/2 mx-auto' src={img} alt="" />
                         </PhotoView>
                     </div>
                     <h1 className='text-5xl text-center font-bold mb-6'>{title}</h1>

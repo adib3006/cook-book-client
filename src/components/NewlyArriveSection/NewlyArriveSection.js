@@ -9,7 +9,7 @@ const NewlyArriveSection = () => {
             <p className='text-xl font-semibold text-center mb-10'>Enjoy our latest combo with your friends and family</p>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={slide1} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <img src={slide1} className="md:max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div>
                         <h1 className="text-5xl font-bold">The Weekend Meal</h1>
                         <p className='my-3'>Full package includes food for 4 persons</p>

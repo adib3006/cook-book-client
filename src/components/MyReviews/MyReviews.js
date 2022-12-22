@@ -26,7 +26,7 @@ const MyReviews = () => {
     const len = reviews.length;
 
     return (
-        <div className='m-10'>
+        <div className='m-2 md:m-10'>
             <Helmet>
                 <title>Cook Book | My Reviews</title>
             </Helmet>

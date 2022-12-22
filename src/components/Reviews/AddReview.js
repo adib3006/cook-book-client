@@ -38,11 +38,11 @@ const AddReview = ({item,refresh,setRefresh}) => {
         .catch(err => console.error(err))
     }
     return (
-        <div className='mx-auto w-4/5 lg:w-2/3 my-10 p-2'>
+        <div className='mx-auto md:w-4/5 lg:w-2/3 my-10 p-2'>
             <form onSubmit={handleAddReview}>
                 <h2 className="text-4xl text-center mb-5">Add your review</h2>
                 <textarea name='review' className="textarea textarea-bordered textarea-warning h-24 w-full mb-5" placeholder="Review" required></textarea>
-                <input name='ratings' type="text" placeholder="Item Ratings" className="input input-bordered input-warning w-1/2" required/>
+                <input name='ratings' type="number" min="0" max="5" step="0.5" placeholder="Item Ratings" className="input input-bordered input-warning w-1/2" required/>
                 <div className='flex justify-center'>
                     <input className='btn btn-outline btn-warning my-5' type="submit" value="Post" />
                 </div>

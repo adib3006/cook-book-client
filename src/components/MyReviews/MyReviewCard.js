@@ -32,15 +32,15 @@ const handleEdit = (id) => {
     return (
         <div className="card w-full border rounded-xl shadow-xl mb-5">
             <div className="card-body">
-                <div className='flex items-center justify-start'>
-                    <div className="avatar mr-5 w-1/5">
-                        <div className="w-16 rounded">
+                <div className='md:flex items-center justify-start'>
+                    <div className="avatar mr-2 md:mr-5 md:w-1/5">
+                        <div className="md:w-16 rounded">
                             <img src={img} alt="" />
                         </div>
                     </div>
-                    <h4 className='text-xl w-1/5'>{title}</h4>
-                    <p className='w-1/5'>Review: {reviewText}</p>
-                    <p className='flex items-center w-1/5'>Ratings : {ratings}<span className='text-orange-500'>
+                    <h4 className='md:text-xl md:w-1/5'>{title}</h4>
+                    <p className='md:w-1/5'>Review: {reviewText}</p>
+                    <p className='flex items-center md:w-1/5'>Ratings : {ratings}<span className='text-orange-500'>
                         <FaRegStar /></span></p>
                     <div>
                         <button onClick={()=>handleEdit(_id)} className='btn mr-2 btn-primary'>Update</button>

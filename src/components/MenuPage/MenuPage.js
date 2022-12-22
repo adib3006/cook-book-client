@@ -10,7 +10,7 @@ const MenuPage = () => {
             .then(data => setMenu(data))
     }, [])
     return (
-        <div className='m-5 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-5'>
+        <div className='md:m-5 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-5'>
             <Helmet>
                 <title>Cook Book | Menu</title>
             </Helmet>
